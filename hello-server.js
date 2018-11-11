@@ -1,6 +1,6 @@
 // Build a server with Node's HTTP module
 const http = require('http');
-const port = 3001;
+const port = process.env.port || 3002;
 const server = http.createServer();
 
 server.on('request', (request, response) => {
