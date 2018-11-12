@@ -8,6 +8,7 @@ let port = process.env.PORT;
 if (port == null || port == "") {
   port = 8000;
 }
+
  
 // Use Node.js body parsing middleware
 app.use(bodyParser.json());
@@ -17,9 +18,10 @@ app.use(bodyParser.urlencoded({
  
 routes(app);
  
+app.listen(port);
 // Start the server
-const server = app.listen(port, (error) => {
-    if (error) return console.log(`Error: ${error}`);
- 
-    console.log(`Server listening on port ${server.address().port}`);
-});
+// const server = app.listen(port, (error) => {
+//     if (error) return console.log(`Error: ${error}`);
+// 
+//     console.log(`Server listening on port ${server.address().port}`);
+// });

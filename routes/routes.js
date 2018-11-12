@@ -1,9 +1,7 @@
 const router = app => {
   app.get('/', function(request, response) {
-        var result = 'App is running'
+        var result = 'App is running test gone?'
         response.send(result);
-    }).listen(app.get('port'), function() {
-        console.log('App is running, server is listening on port ', app.get('port'));
     });
     // app.get('/', (request, response) => {
     //     response.send({
@@ -11,7 +9,7 @@ const router = app => {
     //     });
     // });
     // Display all users
-    app.get('/users', (request, response) => {
+    app.get('/users', function(request, response) {
         pool.query('SELECT * FROM users', (error, result) => {
             if (error) throw error;
      
